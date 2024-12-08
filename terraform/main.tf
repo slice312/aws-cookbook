@@ -4,16 +4,15 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.6.0"
+    }
   }
 }
 
-locals {
-  region       = "eu-north-1"
-  ec2-key-pair = "main-server-key"
-}
-
 provider "aws" {
-  region = local.region
+  region = "eu-north-1"
 }
 
 
@@ -35,8 +34,7 @@ resource "aws_internet_gateway" "igw-office-main" {
 }
 
 resource "aws_eip" "ngw-office-1a" {
-  domain               = "vpc"
-  network_border_group = local.region
+  domain = "vpc"
 
   tags = {
     Name = " ngw-office-1a"
@@ -55,8 +53,7 @@ resource "aws_nat_gateway" "ngw-office-1a" {
 
 
 resource "aws_eip" "ngw-office-1b" {
-  domain               = "vpc"
-  network_border_group = local.region
+  domain = "vpc"
 
   tags = {
     Name = " ngw-office-1b"

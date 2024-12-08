@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  EipAssigner:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: eip-assigner
+      CodeUri: src/
+      Handler: app.lambda_handler
+      Runtime: python3.12
+      Architectures: [arm64]
+      Timeout: 30
