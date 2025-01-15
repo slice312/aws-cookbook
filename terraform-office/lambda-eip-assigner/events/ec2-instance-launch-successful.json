@@ -1,0 +1,31 @@
+{
+  "version": "0",
+  "id": "d598139c-e87e-94ca-fbc1-919356003457",
+  "detail-type": "EC2 Instance Launch Successful",
+  "source": "aws.autoscaling",
+  "account": "010526287103",
+  "time": "2024-12-09T08:35:00Z",
+  "region": "eu-north-1",
+  "resources": [
+      "arn:aws:autoscaling:eu-north-1:010526287103:autoScalingGroup:561ec068-ee5e-406b-8ff7-019dec0481e2:autoScalingGroupName/bastion",
+      "arn:aws:ec2:eu-north-1:010526287103:instance/i-0e8229cdf9681f8d8"
+  ],
+  "detail": {
+      "Origin": "EC2",
+      "Destination": "AutoScalingGroup",
+      "Description": "Launching a new EC2 instance: i-0e8229cdf9681f8d8",
+      "EndTime": "2024-12-09T08:35:00.048Z",
+      "RequestId": "c1a64eaa-3a7f-9cb6-f16d-74ac0750d6fc",
+      "ActivityId": "c1a64eaa-3a7f-9cb6-f16d-74ac0750d6fc",
+      "StartTime": "2024-12-09T08:34:54.055Z",
+      "EC2InstanceId": "i-0a32094de783f81b2",
+      "StatusCode": "InProgress",
+      "StatusMessage": "",
+      "Details": {
+          "Subnet ID": "subnet-00364765e22d0bcc7",
+          "Availability Zone": "eu-north-1a"
+      },
+      "Cause": "At 2024-12-09T08:34:49Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 1.  At 2024-12-09T08:34:52Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 1.",
+      "AutoScalingGroupName": "bastion"
+  }
+}

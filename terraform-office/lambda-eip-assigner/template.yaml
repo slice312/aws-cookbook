@@ -8,6 +8,9 @@ Resources:
       FunctionName: eip-assigner
       CodeUri: src/
       Handler: app.lambda_handler
-      Runtime: python3.12
+      Runtime: python3.13
       Architectures: [arm64]
       Timeout: 30
+      Environment:
+        Variables:
+          ELASTIC_IP_ALLOCATION_ID: ""

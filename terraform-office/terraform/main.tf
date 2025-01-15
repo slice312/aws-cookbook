@@ -5,14 +5,19 @@ terraform {
       version = "~> 5.0"
     }
     archive = {
-      source = "hashicorp/archive"
+      source  = "hashicorp/archive"
       version = "2.6.0"
     }
   }
 }
 
+variable "region" {
+  default     = "eu-north-1"
+  description = "AWS region"
+}
+
 provider "aws" {
-  region = "eu-north-1"
+  region = var.region
 }
 
 
@@ -34,7 +39,9 @@ resource "aws_internet_gateway" "igw-office-main" {
 }
 
 resource "aws_eip" "ngw-office-1a" {
-  domain = "vpc"
+  public_ipv4_pool     = "amazon"
+  network_border_group = var.region
+
 
   tags = {
     Name = " ngw-office-1a"
@@ -53,7 +60,9 @@ resource "aws_nat_gateway" "ngw-office-1a" {
 
 
 resource "aws_eip" "ngw-office-1b" {
-  domain = "vpc"
+  public_ipv4_pool     = "amazon"
+  network_border_group = var.region
+
 
   tags = {
     Name = " ngw-office-1b"

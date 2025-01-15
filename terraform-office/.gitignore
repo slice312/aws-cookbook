@@ -9,9 +9,13 @@
 **/.env
 **/venv/
 
-# AWS SAM CLI
+
+# Lambda
+## AWS SAM CLI
 lambda-eip-assigner/.aws-sam/
 
+## locals
+lambda-eip-assigner/env.local.json
 
 
 # Terraform
