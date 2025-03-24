@@ -32,8 +32,8 @@ resource "aws_iam_policy" "lambda_exec_policy" {
     Version = "2012-10-17",
     Statement = [
       {
-        Action   = "ec2:AssociateAddress",
         Effect   = "Allow",
+        Action   = "ec2:AssociateAddress",
         Resource = "*"
       }
     ]
